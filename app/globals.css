@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --variant-dark: .dark &;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-success: var(--success);
+  --color-error: var(--error);
+  --color-warning: var(--warning);
+
+
+  --color-input: var(--input);
+
+  --font-cmu: var(--font-cmu);
+  --color-border: var(--border);
+}
+
+/* ⚪ Light Mode (Default) */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --border: #e2e8f0;
+
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+
+  --success: #10b981;
+  /* Emerald 500 */
+  --error: #ef4444;
+  /* Red 500 */
+  --warning: #f59e0b;
+  /* Amber 500 */
+
+  /* Slate 200 */
+  --input: #e2e8f0;
+}
+
+/* ⚫ Dark Mode (เมื่อมี class .dark ที่ <html>) */
+.dark {
+  --background: #222831;
+  --foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #020617;
+  --border: #2f3a45;
+
+  --muted: #0f172a;
+  --muted-foreground: #94a3b8;
+
+  --input: #1e293b;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  @apply transition-colors duration-300;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:active {
+  cursor: unset;
+}
